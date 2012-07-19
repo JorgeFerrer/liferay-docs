@@ -1,3 +1,9 @@
+% What is Liferay?
+
+% Rich Sezov
+
+% July 19, 2012
+
 # What is Liferay?  [](id=lp-6-1-ugen01-what-is-liferay--0)
 
 If you're reading this, we're going to make a wild guess and say that you're probably looking for some software to help you run your web site. Creating a dynamic web site that's more than brochureware is complicated these days. You have to think about all kinds of things like user registration, security, community-building, collaboration, and of course your own, unique functionality and the design of your site. 
