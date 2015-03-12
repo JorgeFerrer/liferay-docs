@@ -1,9 +1,26 @@
 # Overview of Settings framework
 
 ## Introduction
-The Settings framework is intended to work with the configuration of Liferay portlets and services. In versions prior to 7.0 Liferay had the PortletPreferences API which had some limitations and was not totally structured, in the sense that there was no central place where the structure of configuration was defined.
 
-Until version 6.2 the configuration and its default values were stored in:
+The Settings framework solves the needis intended to work with the configuration of Liferay portlets and services. This framework allows specifying the configuration at several scopes:
+# System scope: The values are set one for the whole Liferay installation
+# Portal Instance scope: Allows each portal instance to have different configuration values. This is meant for services that deal with data not associated to a site, such as UserService, GroupService, etc.
+# Site scope: Allows each site to have different configuration values. This is meant for services that deal with data associated with a site, such as JournalService, MBMessageService, ...
+# Portlet Instance scope: Allows each portlet instance to have its own configuration values (this is obviously only applicable to portlets and not to services).
+
+In addition to the above, the Settings framework automatically deal with default values for each scope. For example, if you develop a wiki service which has a configuration property to select the markup used, you may want to allow selecting it per site. Once you do that, the settings framework allows setting the default for a portal instance, so that all new sites in the instance will use that value unless it is changed. It also automatically (with no effort from your side) allows setting the default value at the system scope, which will be used for all new portal instances unless it is changed.
+
+The Settings framework is implemented leveraging the OSGi configuration capabilities, which allows for a high performance reading of properties while still allowing dynamic changes to the configuration even at the system scope.
+
+### How does this compare with the solutions prior to Liferay 7?
+
+If you have developed configurable portlets or services for Liferay in previous versions you might be wondering how things are changing. In versions prior to 7.0 the recommended approach was to use the PortletPreferences API from the portlet specification to retrieve and store the portlet configuration. The standard behaviour was altered with a set of elements in liferay-portlet.xml (preferences-owned-by-group, preferences-unique-per-layout, ...). There was no clear differentiation between portlet configuration and service configuration.
+
+Under the hood, the dynamic storage was handled by the Liferay PortletPreferences API and PortalPreferences APIs. These APIs are used for a large variety of purposes and thus it is hard to understand and use.
+
+In addition to the above it was also common to store portlet/service configuration in properties. That meant in portal.properties in the core or portlet.properties in plugins. The values in each of these files could be overridden by placing a file called portal-ext.properties or portlet-ext.properties in the core or plugin classpahts. The properties in these files some times acted as the final configuration which could not be changed in the UI and sometimes as the default values for a configuration UI.
+
+In summary the configuration and its default values were stored in:
 
 * portal.properties
 * portal-ext.properties
@@ -15,6 +32,8 @@ Each configuration value was designated by a key (a string) which could be diffe
 Default values had to be provided in the client code, when calling the API, which made it difficult to track them.
 
 To finish with, it was not clear which configured values were shared among different portlets or unique per portlet instance.
+
+The Settings framework was designed to address all this limitations and make it possible for Liferay developers to make their portlets and services highly configurable with very little effort.
 
 ## Concepts
 
@@ -39,9 +58,9 @@ Settings objects are identified by a **settings id**, which is a `String` contai
 
 Settings objects live at different **settings level**. The settings level is the scope where settings are stored. It affects the instantiability and cardinality of settings instances and how the value of keys are resolved.
 
-There are several settings levels:
+There are several settings scopes:
 
-* Server: settings at this level are unique per server installation.
+* System: settings at this level are unique per server installation.
 * Company service: settings at this level have one different value per company.
 * Group service: settings at this level have one different value per group.
 * Portlet instance: settings at this level have one different value per portlet instance.
@@ -61,7 +80,7 @@ Also, if you set the value of that key, it is set at the portlet instance level 
 
 We define different chains per settings level. Currently the following lookup chains are used for each settings level:
 
-* Server (for an specific *settingsId*):
+* System (for an specific *settingsId*):
 	1. OSGi configuration with *configurationPid* == *settingsId*
 	2. The usual portal.properties chain
 
