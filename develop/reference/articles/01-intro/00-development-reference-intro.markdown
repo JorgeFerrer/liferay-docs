@@ -1,215 +1,112 @@
 # Development Reference [](id=development-reference)
 
-<p style="margin-left: 40px;">
-Here you'll find Liferay's reference documentation for Java, tag libraries,
-JavaScript and CSS, and deployment descriptors.
-</p>
+Here you'll find reference documentation for Liferay Portal CE, Liferay Screens,
+Liferay Faces, and technologies related to you as a third-party developer.
 
-<p style="margin-left: 40px;">
-Liferay Portal 7 Community Edition's Portal Core reference documentation is
-available online  at <a href="https://docs.liferay.com/portal/7.0"
-target="_blank">https://docs.liferay.com/portal/<span
-class="opens-new-window-accessible"> (Opens New Window)</span></a>
-and available for download as a ZIP file from Liferay's Downloads
-<a href="https://www.liferay.com/downloads" target="_blank">Liferay's Downloads<span
-class="opens-new-window-accessible"> (Opens New Window)</span></a>. 
-</p>
+The different types of reference docs you'll find in this section of the Liferay
+Developer Network are as follows: 
 
-<p style="margin-left: 40px;">
-Liferay Portal CE module reference documentation JAR files accompany each
-module's class artifacts in the <a
-href="https://repository.liferay.com/nexus/content/repositories/liferay-releases-ce/com/liferay/"
-target="_blank">Liferay Nexus repository<span
-class="opens-new-window-accessible"> (Opens New Window)</span></a>. The reference
-documentation includes Javadoc and tag library (taglib) docs.
-</p>
+- Descriptions of Java and JavaScript APIs, CSS, tags and tag libraries, and
+XML DTDs
+- Writeups on the latest Screenlets for Liferay Screens
+- Breaking changes
+- Cheat sheets and tips on
+    - Plugin anatomy
+    - Design patterns
+    - Tools
+    - Adapting to new APIs
 
-<h3><span style="font-size: 22px;">Java APIs</span></h3>
+Liferay's reference docs are your fingertips.
 
-<p style="margin-left: 40px;">
-A module's Javadoc describes its Java API. To find specific API modules, you can
-refer to <a
-href="/develop/reference/-/knowledge_base/7-0/finding-liferay-api-modules">
-Finding Liferay API Modules</a>.
-</p>
+## Java APIs [](id=java-apis)
 
+**Javadoc (HTML)** for Liferay Portal 7.0 CE modules at the time of the
+latest GA release:
 
-<p style="margin-left: 40px;">
-You can download a newly migrated module's Javadoc
-JAR file from <a
-href="https://repository.liferay.com/nexus/content/repositories/liferay-releases-ce/com/liferay/"
-target="_blank">Liferay Nexus repository<span
-class="opens-new-window-accessible"> (Opens New Window)</span></a> and extract
-it to a local folder. The extracted <code>index.html</code> file is the gateway
-to exploring the module's Java API.
-</p>
+- [portal-kernel](https://docs.liferay.com/portal/7.0/javadocs/portal-kernel/index.html):
+for developing applications on the Liferay platform.
 
-<p style="margin-left: 40px;">
-Here are the Java packages common to newly migrated API modules:
-<ul style="margin-left: 60px;">
-<li>
-<code>com.liferay.[component].constants</code> - Classes that specify module
-specific constant values, such as web keys
-</li>
-<li>
-<code>com.liferay.[component].exception</code> - Module specific exception classes
-</li>
-<li>
-<code>com.liferay.[component].model</code> - Model entity interfaces, entity wrapper classes, and SOAP classes
-</li>
-<li>
-<code>com.liferay.[component].service</code> - Local and remote service interfaces
-</li>
-<li>
-<code>com.liferay.[component].service.persistence</code> - Entity persistence interfaces, entity finder interfaces, and static utilities
-</li>
-<li>
-<code>com.liferay.[component].util</code> - Utility classes
-</li>
-</ul>
-</p>
+- [util-bridges](https://docs.liferay.com/portal/7.0/javadocs/util-bridges/index.html):
+for using various non-proprietary computing languages, frameworks, and utilities
+on the Liferay platform.
 
-<p style="margin-left: 40px;">
-Not all components have been migrated from the <a
-href="https://docs.liferay.com/portal/7.0/javadocs/portal-kernel/" 
-target="_blank">portal-kernel API<span
-class="opens-new-window-accessible"> (Opens New Window)</span></a> (formerly named portal-service). Their API
-modules have proxies to classes in portal-kernel. Their Javadoc is available at
-<a href="https://docs.liferay.com/portal/7.0/javadocs/portal-kernel/"  
-target="_blank">https://docs.liferay.com/portal/<span
-class="opens-new-window-accessible"> (Opens New Window)</span></a>.
-</p>
+- [util-java](https://docs.liferay.com/portal/7.0/javadocs/util-java/index.html): for
+using various Java-related frameworks and utilities on the Liferay platform.
 
-<p style="margin-left: 40px;">
-Component APIs in portal-kernel have a <code>kernel</code> package after the
-component package name. Their common package structure looks like this:
-<ul style="margin-left: 60px;">
-<li>
-<code>com.liferay.[component].kernel.constants</code> - Classes that specify module specific constant values, such as web keys
-</li>
-<li>
-<code>com.liferay.[component].kernel.exception</code> - Module specific exception classes
-</li>
-<li>
-<code>com.liferay.[component].kernel.model</code> - Model entity interfaces, entity wrapper classes, and SOAP classes
-</li>
-<li>
-<code>com.liferay.[component].kernel.service</code> - Local and remote service interfaces
-</li>
-<li>
-<code>com.liferay.[component].kernel.service.persistence</code> - Entity persistence interfaces, entity finder interfaces, and static utilities
-</li>
-<li>
-<code>com.liferay.[component].kernel.util</code> - Utility classes
-</li>
-</ul>
-</p>
+- [util-slf4j](https://docs.liferay.com/portal/7.0/javadocs/util-slf4j/index.html): for
+using the Simple Logging Facade for Java (SLF4J).
 
-<p style="margin-left: 40px;">
-Liferay's Java API paired up with its taglibs enables you to show off data
-models and create powerful UI components in your presentation layer.
-</p>
+- [portal-impl](https://docs.liferay.com/portal/7.0/javadocs/portal-impl/index.html):
+refer to this only if you are an advanced Liferay developer that needs a deeper
+understanding of Liferay Portal's implementation in order to contribute to it.
 
-<p style="margin-left: 40px;">&nbsp;</p>
+As an alternative to online Javadoc,
+[download](https://www.liferay.com/downloads) the reference doc ZIP file and
+browse locally.
 
-<h3><span style="font-size: 22px;">Taglibs</span></h3>
+For help finding specific Liferay API modules, see [Liferay API
+Modules](/develop/reference/-/knowledge_base/7-0/finding-liferay-api-modules).
 
-<p style="margin-left: 40px;">
-<span style="font-size:18px;">
-<a href="http://docs.liferay.com/portal/7.0/taglibs/" target="_blank">
-Portal Taglibs <span class="opens-new-window-accessible">(Opens New Window)</span>
-</a>
-</span>
-</p>
+<!--
+Module APIs (Javadoc JARs): Javadoc for *all* versions of CE modules are
+available in JARs here. 
+-->
 
-<p style="margin-left: 40px;">
-Tag libraries for <a href="http://alloyui.com/" target="_blank">AlloyUI <span
-class="opens-new-window-accessible">(Opens New Window)</span></a>, Liferay UI,
-Liferay themes, Liferay portlets, Liferay security, and standard portlets.
-</p>
+## Taglibs [](id=taglibs)
 
-<p style="margin-left: 40px;">&nbsp;</p>
+[**Taglib doc (HTML)**](https://docs.liferay.com/portal/7.0/taglibs/) for Liferay Portal 7.0
+CE tag libraries at the time of the latest GA release. As an alternative to online taglib docs, you can
+[download](https://www.liferay.com/downloads) the reference doc ZIP file and
+browse locally.
 
-<p style="margin-left: 40px;">
-<span style="font-size:18px;">
-<a href="http://docs.liferay.com/faces/3.1/vdldoc/" target="_blank">
-Faces Taglibs<span class="opens-new-window-accessible">(Opens New Window)</span>
-</a>
-</span>
-</p>
+**Taglib doc (JARs)** for *all* versions of the CE tag libraries are listed here:
 
-<p style="margin-left: 40px;">
-The latest version of Liferay Faces JSF tag documentation in View Declaration
-Language (VDL) format. VDL docs for all versions of Liferay Faces are available
-at <a href="http://docs.liferay.com/faces/"
-target="_blank">http://docs.liferay.com/faces/ <span
-class="opens-new-window-accessible">(Opens New Window)</span></a>.
-</p>
+- [com.liferay.alloy.taglib](https://repository.liferay.com/nexus/content/repositories/liferay-releases-ce/com/liferay/com.liferay.alloy.taglib/)
 
-<p style="margin-left: 40px;">&nbsp;</p>
+- [com.liferay.application.list.taglib](https://repository.liferay.com/nexus/content/repositories/liferay-releases-ce/com/liferay/com.liferay.application.list.taglib/)
 
-<h3><span style="font-size: 22px;">JavaScript &amp; CSS</span></h3>
+- [com.liferay.asset.taglib](https://repository.liferay.com/nexus/content/repositories/liferay-releases-ce/com/liferay/com.liferay.asset.taglib/)
 
-<p style="margin-left: 40px;">
-<span style="font-size:18px;">
-<a href="http://alloyui.com" target="_blank">
-AlloyUI 3&nbsp;<span class="opens-new-window-accessible">(Opens New Window)</span>
-</a>
-</span>
-</p>
+- [com.liferay.dynamic.data.mapping.taglib](https://repository.liferay.com/nexus/content/repositories/liferay-releases-ce/com/liferay/com.liferay.dynamic.data.mapping.taglib/)
 
-<p style="margin-left: 40px;">
-Liferay includes AlloyUI and all of its JavaScript APIs are available
-within portlets, templates and themes.
-</p>
+- [com.liferay.flags.taglib](https://repository.liferay.com/nexus/content/repositories/liferay-releases-ce/com/liferay/com.liferay.flags.taglib/)
 
-<p style="margin-left: 40px;">&nbsp;</p>
+- [com.liferay.frontend.taglib](https://repository.liferay.com/nexus/content/repositories/liferay-releases-ce/com/liferay/com.liferay.frontend.taglib/)
 
-<p style="margin-left: 40px;">
-<span style="font-size:18px;">
-<a href="http://getbootstrap.com/2.3.2" target="_blank">
-Bootstrap 3&nbsp;<span class="opens-new-window-accessible">(Opens New Window)</span>
-</a>
-</span>
-</p>
+- [com.liferay.item.selector.taglib](https://repository.liferay.com/nexus/content/repositories/liferay-releases-ce/com/liferay/com.liferay.item.selector.taglib/)
 
-<p style="margin-left: 40px;">
-Liferay uses Bootstrap natively and all of its CSS classes are available within
-portlets, templates and themes.
-</p>
+- [com.liferay.layout.taglib](https://repository.liferay.com/nexus/content/repositories/liferay-releases-ce/com/liferay/com.liferay.layout.taglib/)
 
-<p style="margin-left: 40px;">&nbsp;</p>
+- [com.liferay.map.taglib](https://repository.liferay.com/nexus/content/repositories/liferay-releases-ce/com/liferay/com.liferay.map.taglib/)
 
-<h3><span style="font-size: 22px;">Descriptor Definitions</span></h3>
+- [com.liferay.product.navigation.taglib](https://repository.liferay.com/nexus/content/repositories/liferay-releases-ce/com/liferay/com.liferay.product.navigation.taglib/)
 
-<p style="margin-left: 40px;">
-<span style="font-size:18px;">
-<a href="http://docs.liferay.com/portal/7.0/definitions/" style="text-decoration: none;" target="_blank">
-DTDs <span class="opens-new-window-accessible">(Opens New Window)</span>
-</a>
-</span>
-</p>
+- [com.liferay.site.navigation.taglib](https://repository.liferay.com/nexus/content/repositories/liferay-releases-ce/com/liferay/com.liferay.site.navigation.taglib/)
 
-<p style="margin-left: 40px;">
-Describes the XML files used in configuring Liferay apps, Liferay plugins, and
-Liferay Portal.
-</p>
+- [com.liferay.staging.taglib](https://repository.liferay.com/nexus/content/repositories/liferay-releases-ce/com/liferay/com.liferay.staging.taglib/)
 
-<p style="margin-left: 40px;">&nbsp;</p>
+- [com.liferay.trash.taglib](https://repository.liferay.com/nexus/content/repositories/liferay-releases-ce/com/liferay/com.liferay.trash.taglib/)
 
-<p style="margin-left: 40px;">
-<span style="font-size:18px;">
-<a href="http://docs.liferay.com/portal/7.0/propertiesdoc/liferay-plugin-package_7_0_0.properties.html"
-id="yui_patched_v3_11_0_1_1414746645512_1007" style="word-spacing: normal;
-outline: 0px;" target="_blank">
-liferay-plugin-package_7_0_0.properties&nbsp;<span class="opens-new-window-accessible">(Opens New Window)</span>
-</a>
-</span>
-</p>
+[**Faces Taglibs**](https://docs.liferay.com/faces/3.2/vdldoc/): for the latest
+version of Liferay Faces JSF tag docs in View Declaration Language (VDL) format.
+VDL docs for all versions of Liferay Faces are available
+[here](http://docs.liferay.com/faces/).
 
-<p style="margin-left: 40px;">
-Defines properties used for Liferay plugins. These properties describe the
-the Liferay plugin, declare its resources, and specify its security related
-parameters.  </p>
+## JavaScript and CSS [](id=javascript-and-css)
 
+[**Lexicon**](http://liferay.github.io/lexicon/): The Liferay Experience
+Language is a system for building applications in and outside of Liferay,
+designed to be fluid and extensible, as well as provide a consistent and
+documented API.
 
+[**Bootstrap**](http://getbootstrap.com/): The base CSS library onto which
+Lexicon is added. Liferay uses Bootstrap natively and all of its CSS classes are
+available within portlets, templates, and themes.
+
+[**AlloyUI**](http://alloyui.com): Liferay includes AlloyUI and all of its
+JavaScript APIs are available within portlets, templates and themes.
+
+## Descriptor Definitions [](id=descriptor-definitions)
+
+[**DTDs**](http://docs.liferay.com/portal/7.0/definitions/): Describes the XML
+files used in configuring Liferay apps, Liferay plugins, and Liferay Portal.
