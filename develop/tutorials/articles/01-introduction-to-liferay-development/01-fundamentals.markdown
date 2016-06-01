@@ -13,23 +13,23 @@ you need.
 Speaking of code and deploying, here are some of the most common ways of
 expanding or customizing @product@s features: 
 
-1. Developing a new full-blown web application. The most common way to develop
+1. **Developing a new full-blown web application**. The most common way to develop
    web applications for @product@ is with a portlet, because it integrates well
    with other existing applications, but you are not limited to portlets if you
    don't need to integrate your apps with others. 
 
-2. Customizing an existing web application or feature. @product@ is designed to be
+2. **Customizing an existing web application or feature**. @product@ is designed to be
    extended. Many extension points can be leveraged to modify existing behavior,
    and most of these can be developed through a single Java class with some
    annotations (more details later). 
 
-3. Creating a new web service for an external system, a mobile app, an IoT
+3. **Creating a new web service** for an external system, a mobile app, an IoT
    device, or anything else. 
 
-4. A mobile app that leverages Liferay as a platform, which you can write in a
-   fraction of the normal time thanks to Liferay Screens and Liferay Mobile SDK. 
+4. **Developing a mobile app that leverages Liferay as its backend**, which you can write in a
+   fraction of the normal time thanks to **Liferay Screens** and **Liferay Mobile SDK**. 
 
-5. Developing a custom theme that adapts the look and feel of the platform to
+5. **Developing a custom theme** that adapts the look and feel of the platform to
    the visual needs of your project. 
 
 Liferay provides a convenient and easy-to-use framework called `MVCPortlet` to
