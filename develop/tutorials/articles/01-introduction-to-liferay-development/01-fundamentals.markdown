@@ -32,6 +32,15 @@ expanding or customizing @product@s features:
 5. **Developing a custom theme** that adapts the look and feel of the platform to
    the visual needs of your project. 
 
+TODO: I think we are missing an explanation of Portlets and/or Web Applications at Liferay here. We can explain how portlets can be used when 
+frontend integration is desired (which is a very common use case for Liferay since it started as a Portal Platform). Also, Liferay can be used
+as a headless platform and standalone web applications can be built with any frontend technology leveraging Liferay's services.
+
+## Developer tools and frameworks 
+
+TODO: (Intro missing)
+
+TODO: It talks about MVCPortlet without even introducing what a portlet is.
 Liferay provides a convenient and easy-to-use framework called `MVCPortlet` to
 make writing portlets easy, but developers are free to use any other framework,
 such as Spring MVC, to create portlets. 
@@ -42,7 +51,7 @@ them, and a place to put your business logic. It can also generate JSON or SOAP
 web services, giving developers a full stack for storing and retrieving data
 using web or mobile clients.
 
-Applications can be created by leveraging Liferay's many building blocks that
+Applications can be created by leveraging Liferay's many frameworks and building blocks that
 are commonly needed by today's applications. For example, a commenting system
 allows developers to attach comments to any asset that they define, whether they
 be assets they develop or assets that ship with the system. Assets are shared
@@ -55,17 +64,13 @@ to follow. The recycle bin stores deleted assets for a specified period of time,
 making it easy for users to restore data without the intervention of an
 administrator. A file storage API with multiple available back-ends makes
 storing and sharing files trivial. Search is built into the system as well, and
-it is designed for developers to integrate it with their applications. Almost
-any framework you might think of using or developing is already there; you just
+it is designed for developers to integrate it with their applications. Many of 
+the frameworks you might need when developing complex applications Are already there; you just
 need to take advantage of it: a Social Networking API, user-generated forms with
 data lists, a message bus, an audit system, and much more. 
 
-The same is true for customization. Almost anything in Liferay can be
-customized. Application interfaces can be redesigned, the whole user interface
-can be themed, and menu items can be added or removed. 
 
 ## Modules 
-
 
 All applications, extensions, and customizations built on Liferay are
 distributed and deployed as *modules*. A module is just a typical JAR file,
@@ -80,7 +85,7 @@ taking the server down.
 
 +$$$
 
-Note: In the OSGi nomenclature, modules are sometimes called OSGi bundles. An
+Note: In the OSGi nomenclature, modules are sometimes also referred to as bundles. An
 attempt has been made to be consistent and only use the word *modules* to refer
 to modules, but if a *bundle* has slipped in here and there, just know they're
 the same thing. 
@@ -89,6 +94,9 @@ $$$
 
 ## Components
 
+TODO: It's probably better to explain better what OSGi services are and how Declarative Services provides
+ Components as a programming model to provide instatiation of POJOs, dependency injection and simple registration as OSGi components
+ 
 Modules may contain one or more *components*. A component is a POJO whose
 life cycle is managed by the container. In Liferay, a component is generally part
 of the Declarative Services framework. Creating a component can be as easy as
@@ -97,6 +105,9 @@ terms, a component is the smallest building block of a larger application, and
 that application is itself made up of many small components.  This makes it
 easier to develop an application because you only have to deal with small,
 well-defined, bite-sized chunks of code at a time. 
+
+TODO: What follows would probably be a better fit for later. At this point, what is important is that the reader understands
+the concept of components. Other benefits are secondary.
 
 Components are managed by a component container, which keeps track of the
 components that are installed and active. In this way, components have these
@@ -121,6 +132,8 @@ removing components and services.
 The next question then becomes, so what? Why is this a big deal? Why should I
 have components, and what do I need them for? 
 
+TODO: While this is a good example, I'm not sure if it's conveying the main benefit of a modular and component based system, which is
+to tame complexity and make large developments stay maintainable over time.
 Picture this: you have a system that generates a report in PDF format from data
 in a database. The data is captured from a web application running in Liferay.
 You come in to work in the morning and something's happened (it doesn't matter
@@ -159,6 +172,9 @@ create applications based on modules, but also to extend the existing
 functionality of the system. Liferay can benefit from this now because the
 platform on which it rests is designed for both application development and
 customization. 
+
+TODO: I think more explanation is needed regarding using Components as a extension model before introducing the concept of
+service ranking. That property is only needed for some specific type of extensions.
 
 Components in the OSGi runtime have what's called a *service ranking*. This can
 be used by developers to extend or override modules that are already running in
