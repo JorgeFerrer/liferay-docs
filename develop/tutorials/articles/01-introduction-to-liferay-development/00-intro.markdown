@@ -23,11 +23,9 @@ time than you would from scratch.
 It also ships with a default set of common applications you can make use of
 right away: web experience management, collaboration applications such as forums
 and wikis, documents and media, blogs, and more. All of these applications are
-designed to be customized, as is the system itself. If the design of your site
-includes applications like these, through a mechanism called Application Display
-Templates, you can make it look as though you designed them yourself. You can
+designed to be customized, as is the system itself. You can
 also extend them to include your own functionality, and this is no hack: because
-of Liferay's modular design, customization *is* by design. 
+of Liferay's extensible design, customization *is* by design. 
 
 In short, Liferay was written by developers for developers, to help you get your
 work done faster and more easily, to take the drudgery out of web and mobile app
