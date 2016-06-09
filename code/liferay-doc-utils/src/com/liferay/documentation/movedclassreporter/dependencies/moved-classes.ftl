@@ -47,8 +47,7 @@ caption {
     text-align: left;
 }
 </style>
-
-<table>
+<table style="width:100%">
 
   <tr>
     <th>Class</th>
@@ -80,7 +79,7 @@ The table below lists classes that were in the former
 from Liferay.
 </p>
 
-<table>
+<table style="width:100%">
 
   <tr>
     <th>Class</th>
