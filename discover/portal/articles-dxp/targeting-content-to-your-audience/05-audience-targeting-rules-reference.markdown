@@ -27,6 +27,15 @@ Evaluates if the user has visited the selected content.
 
 Evaluates if the user has visited the selected page.
 
+### Previously Visited Site [](id=previously-visited-site)
+
+Evaluates if the user has visited a specific site before visiting the current
+site. The site's URL can be evaluated based on whether it contains or starts
+with defined text.
+
+For example, if you'd like to segment users based on whether they navigated to
+your site from Twitter, you could define a Twitter URL for this rule.
+
 ### Score Points [](id=score-points)
 
 Evaluates if the user has visited any page or content categorized under this
@@ -57,9 +66,15 @@ enable Facebook Single Sign On in Liferay:
    and password in the prompted pop-up and click *Login*. You should be
    automatically signed in to your Liferay Portal with your Facebook user.
 
+Your Facebook app, by default, only provides access to certain user attributes
+(e.g., gender, age, number of friends). For the Facebook City, Facebook
+Education, and Facebook Page Like rules to evaluate properly, you must declare
+this information accessible in your Facebook app. @product@ cannot read this
+information from Facebook users without these granted permissions.
+
 Read the
 [Integrating with Facebook](/discover/portal/-/knowledge_base/7-0/integrating-with-facebook)
-section for more information.
+section for more information on using Facebook with @product@.
 
 ### Facebook Age [](id=facebook-age)
 

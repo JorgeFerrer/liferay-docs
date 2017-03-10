@@ -18,9 +18,16 @@ has been applied, you can select *Male* or *Female*. Once the Age rule has been
 applied, you can select an *Older than* value and a *Younger than* value. For
 example, you could define a *Women over 30* user segment by applying the Gender
 rule and selecting *Female*, and applying the Age rule and setting the *Older
-than* attribute to *30*. Once you've customized the rules for the new user
-segment, entered a name and, optionally, a description, click *Save* to actually
-create the user segment.
+than* attribute to *30*.
+
+Some rules are also instantiable, meaning you can apply more than one of the
+same type of rule to a user segment. This allows you to create scenarios where
+you need to segment your audience based on actions that might occur multiple
+times (e.g., visiting multiple pages, viewing multiple banners, having several
+roles, etc.).
+
+Once you've customized the rules for the new user segment, entered a name and,
+optionally, a description, click *Save* to actually create the user segment.
 
 ![Figure 2: After applying the rule, click the rule to expland/collapse it.](../../images-dxp/audience-targeting-rules.png)
 
@@ -65,7 +72,11 @@ These are some of the rules that are included with the app by default:
 - Behavior
     - Viewed page or content
     - Score Points rule.
- 
+
+For a complete reference of all rules available, see the
+[Liferay Audience Targeting Rules](/develop/tutorials/-/knowledge_base/7-0/liferay-audience-targeting-rules)
+tutorial.
+
 The Score Points rule assigns 1 point to a user each time the user views a page
 or content that's been categorized under the user segment to which the rule has
 been applied. Once a user exceeds the configured threshold, the user matches
@@ -128,7 +139,7 @@ generate a new report. Reports display a summary of interesting information
 related to each user segment. For example, the Content Views report shows the
 asset that's been most viewed by users that belong to the user segment.
 
-![Figure 6: The Content Views report shows the asset that's been most viewed by users that belong to a user segment.](../../images-dxp/audience-targeting-user-segment-report.png)
+![Figure 6: This report displays what pages the user segment has visited.](../../images-dxp/audience-targeting-user-segment-report.png)
 
 Reports also display which users belonged to a user segment. This lets an
 administrator know which users of the site qualified to the particular user
@@ -137,7 +148,7 @@ users. Simply click the user report you're interested in and select the
 *Options* (![Options](../../images-dxp/icon-options.png)) &rarr; *Export*
 button. This downloads a CSV file with the list of users.
 
-Additional reports can be created by developers and deployed as OSGI plugins.
+Additional reports can be created by developers and deployed as OSGi plugins.
 See the [Reporting User Behavior with Audience Targeting](/develop/tutorials/-/knowledge_base/6-2/reporting-user-behavior-with-audience-targeting)
 tutorial for details. Reports are generated daily by default. However, you can
 generate a report at any time. To generate a new report when currently viewing a

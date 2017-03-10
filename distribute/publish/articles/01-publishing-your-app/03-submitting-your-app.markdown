@@ -108,13 +108,6 @@ for detailed requirements for tags.
 **EULA:** You can use the default end user license agreement (EULA) or provide
 your own. There's a link to the minimum terms which custom EULAs must satisfy.
 
-**Liferay Only:** If you're publishing a CE-only or EE-only app, select 
-*CE Only* or *EE Only* in the *Product Type* selector. If you're providing an
-app that runs on both CE and EE, just flag the *Liferay EE Plugin* check box. If
-you're uploading a bug fix or would like to replace a previous version of your
-app, specify the app entry IDs of the apps to be replaced by the new app in the
-*Supercedes App Entry IDs* field.
-
 Remember to visit the articles
 [Planning Your App's Distribution](/distribute/how-to-publish/-/knowledge_base/how-to-publish/planning-your-apps-distribution)
 and
@@ -130,7 +123,7 @@ On this screen, you must specify your app's version and upload your app's files.
 Note that the article 
 [Planning Your App's Distribution](/distribute/how-to-publish/-/knowledge_base/how-to-publish/planning-your-apps-distribution) 
 helps you plan your app's versioning scheme. Likewise, the article 
-[Preparing Your App](/distribute/publish/-/knowledge_base/publish/preparing-your-app) 
+[Preparing Your App](/distribute/how-to-publish/-/knowledge_base/how-to-publish/preparing-your-app) 
 helps you determine which files to upload. 
 
 To start uploading, click *Browse* and select the files that make up your app. 
